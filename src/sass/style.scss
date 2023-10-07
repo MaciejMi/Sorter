@@ -1,0 +1,286 @@
+@use './colors' as c;
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+	background-color: c.$dark;
+	color: c.$white;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+.nav {
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding: 2rem 1rem;
+	background-color: c.$red;
+	text-align: center;
+	z-index: 1000;
+	box-shadow: 0 0 10px 0 #000;
+	a {
+		color: c.$white;
+		text-decoration: none;
+	}
+	&__title {
+		font-size: 1.8rem;
+		span {
+			font-size: 2.4rem;
+			font-weight: bold;
+		}
+	}
+}
+
+.section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 3rem 1rem;
+	&__title {
+		padding: 1rem;
+		position: relative;
+		display: inline-block;
+		margin-bottom: 3rem;
+		font-size: 2rem;
+		text-align: center;
+		transition: 0.3s;
+		&::before {
+			position: absolute;
+			right: 50%;
+			bottom: -5%;
+			transform: translateX(50%);
+			height: 3px;
+			background-color: c.$red;
+			width: 100%;
+			content: '';
+		}
+
+		&:hover {
+			height: 100%;
+			background-color: c.$red;
+		}
+	}
+}
+
+.home-section {
+	a {
+		text-decoration: none;
+	}
+	&__boxes {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 2rem;
+	}
+
+	&__box {
+		padding: 4rem 3rem;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 25px;
+		border: 4px solid c.$red;
+		overflow: hidden;
+		text-align: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-attachment: fixed;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(1.02);
+		}
+		&:first-of-type {
+			background-image: url('../img/vznasejici-se-bubliny.jpg');
+		}
+
+		&:nth-of-type(2) {
+			background-image: url('../img/AdobeStock_55876265-autor-Gajus-wybor.jpg');
+		}
+		&:nth-of-type(3) {
+			background-image: url('../img/office-594132_1280.jpg');
+		}
+		&:nth-of-type(4) {
+			background-image: url('../img/teamwork-3276682_1280.jpg');
+		}
+
+		&:last-of-type {
+			background-image: url('../img/seed-training-1024x558.jpg');
+		}
+	}
+
+	&__box-shadow {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+		z-index: 1;
+	}
+
+	&__box-title {
+		color: c.$white;
+		font-size: 1.8rem;
+		z-index: 2;
+	}
+}
+
+.sort {
+	&__clear {
+		margin-top: 2rem;
+		padding: 2rem;
+		border: 1px solid transparent;
+		color: c.$white;
+		font-size: 2rem;
+		border-radius: 25px;
+		border: 1px solid c.$red;
+		background: none;
+		cursor: pointer;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: c.$red;
+		}
+	}
+
+	&__input-box {
+		position: relative;
+		width: 80%;
+		max-width: 900px;
+		height: 50px;
+		border-radius: 25px;
+		border: 1px solid c.$red;
+		overflow: hidden;
+	}
+
+	&__input {
+		position: absolute;
+		left: 0;
+		padding: 1rem;
+		width: 50%;
+		height: 100%;
+		color: c.$white;
+		background: none;
+		border: 1px solid transparent;
+		text-align: center;
+		&:focus {
+			outline: 0;
+			border: 1px solid c.$red;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		right: 0;
+		background-color: c.$red;
+		border: 1px solid transparent;
+		color: c.$white;
+		width: 50%;
+		height: 100%;
+		cursor: pointer;
+	}
+
+	&__boxes {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+		margin-top: 4rem;
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 80px;
+		min-height: 80px;
+		border-radius: 50%;
+		background-color: c.$red;
+		font-size: 2rem;
+	}
+}
+
+.description {
+	text-align: center;
+	h2,
+	h3,
+	p,
+	img {
+		padding: 1rem 0;
+	}
+	h2 {
+		font-size: 3rem;
+	}
+	h3 {
+		font-size: 2.2rem;
+	}
+	p {
+		font-size: 1.8rem;
+	}
+	img {
+		margin-top: 2rem;
+		object-fit: cover;
+		object-position: center;
+		max-width: 600px;
+		width: 100%;
+	}
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 2rem;
+	}
+}
+
+@media (min-width: 576px) {
+	.nav {
+		&__title {
+			font-size: 3rem;
+			span {
+				font-size: 3.8rem;
+			}
+		}
+	}
+
+	.section {
+		&__title {
+			font-size: 5rem;
+		}
+	}
+
+	.home-section {
+		&__box {
+			padding: 7rem;
+			width: 400px;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.home-section {
+		&__box {
+			padding: 10rem;
+			width: 500px;
+		}
+
+		&__box-title {
+			font-size: 3.5rem;
+		}
+	}
+}
