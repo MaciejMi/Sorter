@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort | Sorter</title>
+    <meta name="description"
+        content="Chcesz się dowiedzieć czym jest sortowanie przez wstawianie? Potrzebujesz dowiedzieć się jak złożyć ten algorytm? Świetnie trafiłeś!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <script src="./dist/js/main.min.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="./index.html" class="nav__title"><span>Sorter</span> - Posortuj swoje dane!</a>
+    </nav>
+    <main class="main">
+        <div class="section sort">
+            <h1 class="section__title">
+                Sortowanie przez wstawianie
+            </h1>
+            <div class="sort__input-box">
+                <input placeholder="Liczba" type="number" class="sort__input">
+                <input type="hidden" name="sortType" value="insertionSort" class="sort__input--hidden">
+                <button class="sort__btn">Dodaj</button>
+            </div>
+            <div class="sort__boxes">
+            </div>
+            <button class="sort__clear">Wyczyść</button>
+        </div>
+        <section class="section description">
+            <h2>Opis algorytmu</h2>
+            <div class="description__container">
+                <div>
+                    <p>Algorytm sortowania przez wstawianie, podczas iteracji wstawia każdy element na jego właściwą
+                        pozycję. Przy każdej iteracji element jest porównywany ze wcześniejszymi elementami, aż do
+                        znalezienia prawidłowej pozycji, następnie elementy po lewej stronie są przesuwane, aby zrobić
+                        miejsce dla nowego elementu.</p>
+                    <img src="./dist/img/insertionsort.png"
+                        alt="Zdjęcie, na którym pokazane jest 1. przejście algorytmu (układana jest tablica elementów: 4, 3, 2, 10, 12, 1, 5, 6)">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Wszystkie informacje zawarte w sekcji description są zaczerpnięte ze strony <a
+                href="https://www.geeksforgeeks.org">Geeks For Geeks</a></p>
+    </footer>
+</body>
+
+</html>

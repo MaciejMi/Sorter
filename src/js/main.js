@@ -50,6 +50,22 @@ class Sort {
 		}
 	}
 
+	insertionSort() {
+		const array = this.numbers;
+		let key, j;
+		for (let i = 1; i < array.length; i++) {
+			key = array[i];
+			j = i - 1;
+
+			while (j >= 0 && array[j] > key) {
+				array[j + 1] = array[j];
+				j = j - 1;
+			}
+			array[j + 1] = key;
+		}
+		this.numbers = array;
+	}
+
 	clearDashboard() {
 		sortBoxes.innerHTML = '';
 	}
@@ -78,11 +94,12 @@ function inputHandler() {
 	if (parsedNumber || parsedNumber === 0) {
 		sort.clearDashboard();
 		sort.addNumber(parsedNumber);
-		console.log(sortType.value);
 		if (sortType.value === 'bubleSort') {
 			sort.bubbleSort();
 		} else if (sortType.value === 'selectionSort') {
 			sort.selectionSort();
+		} else if (sortType.value === 'insertionSort') {
+			sort.insertionSort();
 		}
 		sort.deployDatas();
 	}
