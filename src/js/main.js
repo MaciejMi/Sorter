@@ -33,6 +33,23 @@ class Sort {
 		this.numbers = array;
 	}
 
+	selectionSort() {
+		let n = this.numbers.length;
+		for (let i = 0; i < n; i++) {
+			let min = i;
+			for (let j = i + 1; j < n; j++) {
+				if (this.numbers[j] < this.numbers[min]) {
+					min = j;
+				}
+			}
+			if (min != i) {
+				let tmp = this.numbers[i];
+				this.numbers[i] = this.numbers[min];
+				this.numbers[min] = tmp;
+			}
+		}
+	}
+
 	clearDashboard() {
 		sortBoxes.innerHTML = '';
 	}
@@ -44,7 +61,6 @@ class Sort {
 
 	deployDatas() {
 		const array = this.numbers;
-		console.log(array);
 		array.forEach(element => {
 			const div = document.createElement('div');
 			div.classList.add('sort__box');
@@ -57,21 +73,29 @@ class Sort {
 }
 
 const sort = new Sort();
-
 function inputHandler() {
 	const parsedNumber = Number.parseInt(inputNumber.value);
 	if (parsedNumber || parsedNumber === 0) {
 		sort.clearDashboard();
 		sort.addNumber(parsedNumber);
-		sort.bubbleSort();
+		console.log(sortType.value);
+		if (sortType.value === 'bubleSort') {
+			sort.bubbleSort();
+		} else if (sortType.value === 'selectionSort') {
+			sort.selectionSort();
+		}
 		sort.deployDatas();
 	}
 }
 
-button.addEventListener('click', inputHandler);
+button.addEventListener('click', () => {
+	inputHandler();
+	inputNumber.value = '';
+});
 document.addEventListener('keydown', e => {
 	if (e.key === 'Enter') {
 		inputHandler();
+		inputNumber.value = '';
 	}
 });
 

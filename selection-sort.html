@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort | Sorter</title>
+    <meta name="description"
+        content="Chcesz się dowiedzieć czym jest sortowanie przez wybór? Potrzebujesz dowiedzieć się jak złożyć ten algorytm? Świetnie trafiłeś!">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <script src="./dist/js/main.min.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav">
+        <a href="./index.html" class="nav__title"><span>Sorter</span> - Posortuj swoje dane!</a>
+    </nav>
+    <main class="main">
+        <div class="section sort">
+            <h1 class="section__title">
+                Sortowanie przez wybór
+            </h1>
+            <div class="sort__input-box">
+                <input placeholder="Liczba" type="number" class="sort__input">
+                <input type="hidden" name="sortType" value="selectionSort" class="sort__input--hidden">
+                <button class="sort__btn">Dodaj</button>
+            </div>
+            <div class="sort__boxes">
+            </div>
+            <button class="sort__clear">Wyczyść</button>
+        </div>
+        <section class="section description">
+            <h2>Opis algorytmu</h2>
+            <div class="description__container">
+                <div>
+                    <p>Weźmy jako przykład tablicę elementów arr = [64, 25, 12, 22, 11].</p>
+                    <h3>Piersze przejście</h3>
+                    <p>Dla pierwszej pozycji posortowanej tablicy cała tablica jest przemierzana sekwencyjnie od indeksu
+                        0 do 4. Pierwsza pozycja, w której obecnie przechowywane jest 64, po przejściu całej tablicy
+                        jasne jest, że 11 jest najniższą wartością. Zatem zamień 64 na 11. Po jednej iteracji liczba 11,
+                        która jest najmniejszą wartością w tablicy, zwykle pojawia się na pierwszej pozycji posortowanej
+                        listy.</p>
+                    <img src="./dist/img/1 (1).webp"
+                        alt="Zdjęcie, na którym pokazane jest 1. przejście algorytmu (układana jest tablica elementów: [64, 25, 12, 22, 11]">
+                </div>
+                <div>
+                    <h3>Drugie przejście</h3>
+                    <p>Dla drugiej pozycji, gdzie występuje 25, ponownie przejdź przez resztę tablicy w sposób
+                        sekwencyjny. Po przejściu odkryliśmy, że 12 jest drugą najniższą wartością w tablicy i powinna
+                        pojawić się na drugim miejscu w tablicy, zatem zamień te wartości.</p>
+                    <img src="./src/img/2 (1).webp"
+                        alt="Zdjęcie, na którym pokazane jest 2. przejście algorytmu (układana jest tablica elementów [64, 25, 12, 22, 11]">
+                </div>
+                <div>
+                    <h3>Trzecie przejście</h3>
+                    <p>Teraz, dla trzeciego miejsca, gdzie występuje 25, ponownie przejrzyj resztę tablicy i znajdź
+                        trzecią najmniejszą wartość obecną w tablicy. Podczas przechodzenia, 22 okazało się trzecią
+                        najmniejszą wartością i powinno pojawić się na trzecim miejscu w tablicy, w ten sposób zamień 22
+                        z elementem znajdującym się na trzeciej pozycji.</p>
+                    <img src="./src/img/3 (1).webp"
+                        alt="Zdjęcie, na którym pokazane jest 3. przejście algorytmu (układana jest tablica elementów [64, 25, 12, 22, 11]">
+                </div>
+                <div>
+                    <h3>Czwarte przejście</h3>
+                    <p>Podobnie dla czwartej pozycji przejdź przez resztę tablicy i znajdź czwarty najmniejszy element w
+                        tablicy Ponieważ 25 jest czwartą najniższą wartością, zajmie czwartą pozycję.</p>
+                    <img src="./src/img/4.webp"
+                        alt="Zdjęcie, na którym pokazane jest 3. przejście algorytmu (układana jest tablica elementów [64, 25, 12, 22, 11]">
+                </div>
+                <div>
+                    <h3>Piąte przejście</h3>
+                    <p>W końcu największa wartość występująca w tablicy jest automatycznie umieszczana na ostatniej
+                        pozycji w tablicy Wynikowa tablica jest tablicą posortowaną.</p>
+                    <img src="./src/img/5.webp"
+                        alt="Zdjęcie, na którym pokazane jest 3. przejście algorytmu (układana jest tablica elementów [64, 25, 12, 22, 11]">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Wszystkie informacje zawarte w sekcji description są zaczerpnięte ze strony <a
+                href="https://www.geeksforgeeks.org">Geeks For Geeks</a></p>
+    </footer>
+</body>
+
+</html>
