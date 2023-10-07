@@ -19,6 +19,12 @@ html {
 	scroll-behavior: smooth;
 }
 
+.wrapper {
+	margin: 0 auto;
+	max-width: 1400px;
+	width: 100%;
+}
+
 .nav {
 	position: sticky;
 	top: 0;
@@ -110,15 +116,9 @@ html {
 		&:nth-of-type(2) {
 			background-image: url('../img/AdobeStock_55876265-autor-Gajus-wybor.jpg');
 		}
-		&:nth-of-type(3) {
-			background-image: url('../img/office-594132_1280.jpg');
-		}
-		&:nth-of-type(4) {
-			background-image: url('../img/teamwork-3276682_1280.jpg');
-		}
 
-		&:last-of-type {
-			background-image: url('../img/seed-training-1024x558.jpg');
+		&:nth-of-type(3) {
+			background-image: url('../img/teamwork-3276682_1280.jpg');
 		}
 	}
 
@@ -230,6 +230,7 @@ html {
 	}
 	p {
 		font-size: 1.8rem;
+		max-width: 1000px;
 	}
 	img {
 		margin-top: 2rem;
